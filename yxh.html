@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url(WechatIMG1594.jpg) center/cover no-repeat;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none ;/*去除列表默认样式*/
+        }
+        .yxh{
+            /*设置表面大盒子*/
+            width: 1000px;
+            height: 700px;
+            margin: 50px auto;
+            border: 3px solid black;
+            border-radius: 30px;
+        }
+        .pictures{
+            width: 250px;
+            height: 480px;
+            border: 3px solid black;
+            margin: 20px auto;
+            border-radius: 30px;
+            background: url(yxh8.jpg) center/cover;
+            /*设置背景图 居中/等比例缩放*/
+        }
+        .album{
+            width: 900px;
+            height: 100px;
+            margin: 30px auto;
+        }
+        .wallpage{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 15px 10px;/*上下左右距离*/
+            background: url(yxh8.jpg)center/cover;
+        }
+        /*结构选择器 如果你有一堆选择器对象 可以让选择指定的值 你要选择第几个元素*/
+        .wallpage:nth-child(2){
+            background: url(yxh4.jpg)center/cover;
+        }
+        .wallpage:nth-child(3){
+            background: url(yxh9.jpg)center/cover;
+        }
+        .wallpage:nth-child(4){
+            background: url(yxh3.jpg)center/cover;
+        }
+        .wallpage:nth-child(5){
+            background: url(yxh5.jpg)center/cover;
+        }
+        .wallpage:nth-child(6){
+            background: url(yxh6.jpg)center/cover;
+        }
+        .wallpage:nth-child(7){
+            background: url(yxh7.jpg)center/cover;
+        }
+        .wallpage:nth-child(8){
+            background: url(yxh10.jpg)center/cover;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let name = prompt('请输入你的名字');
+        // 检查名字是否等于 'xxx'
+        if (name === '於夏涵') {
+        alert('我爱你 ' + name + '!!! 今天也很想你~');
+        } else {
+        // 如果名字不是 'xxx'，显示提示并阻止进入
+        alert('你不是於夏涵，滚出去！！')
+        window.location.href = 'about:blank'; 
+    };
+    </script>
+    <h1 style="text-align: center;margin: 30px auto;">❤️ 爱你 ❤️</h1>
+    <div class="yxh">
+        <div class="pictures"></div>
+        <ul class="album">
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+        </ul>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            //给壁纸绑定一个点击事件  --> 当我鼠标点击壁纸的时候 触发功能
+            //当我点击图片发生什么事情? 点击小图片切换手机里的壁纸
+            //把手机里的壁纸图片换成我当前的点击壁纸图片
+            $('.wallpage').click(function(){
+                $('.pictures').css('background-image',$(this).css('background-image'))
+            })
+        </script>
+    </div>
+
+</body>
+</html>
